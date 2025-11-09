@@ -1,91 +1,107 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Reset base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    background-color: #d7b62e;
-    
-}
-.flex{
-    display: flex;
+body {
+  background-color: #d7b62e;
+  font-family: Arial, sans-serif;
 }
 
-
-.opening-house{
-    background-color: black;
-    flex-basis: 100%;
-    height: 140px;
-    border-radius: 100px;
-    margin: 15px;
-    
-    
+/* Sezione orari + contatti */
+.opening-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  border-radius: 50px;
+  margin: 15px;
+  padding: 20px 40px;
 }
 
-h3{
-    color: white;
-    padding: 50px;
-    font-size: 25px;
+.opening-bar h3 {
+  color: white;
+  font-size: 20px;
 }
 
-.contant-number{
-    padding: 25px;
-    border-radius: 35px;
-    margin: 37px;
-    display: flex;
-    background-color: #d7b62e;
-    
-
-}
-.information{
-    background-color: black;
-    height: 300px;
-    margin: 22px;
-    justify-content: space-between;
+.contact-btn {
+  background-color: #d7b62e;
+  border: none;
+  border-radius: 35px;
+  padding: 15px 30px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background 0.3s;
 }
 
-#logo{
-    background-color: white;
-    border-radius: 50%;
-    margin: 50px;
-    width: 200px;
-    height: 200px;
+.contact-btn:hover {
+  background-color: #c4a129;
 }
 
-h1{
-    color: white;
-    margin: 120px;
-}
-a{
-    color: white;
-    font-size: 20px;
-}
-.indication{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    margin: 100px ;
-    justify-content: space-around;
-    
-    
-}
-.social{
-    flex-direction: column;
-    align-items: center;
-    
+/* Sezione principale */
+.information {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  margin: 22px;
+  padding: 30px;
+  border-radius: 30px;
+  color: white;
 }
 
-.instagram{
-    padding: 20px;
-    background-color: #d7b62e;
-    border-radius: 30px;
-    font-size: 20px;
-    margin: 50px;
+/* Logo */
+#logo {
+  background-color: white;
+  border-radius: 50%;
+  width: 180px;
+  height: 180px;
 }
-.facebook{
-    padding: 20px;
-    background-color: #d7b62e;
-    border-radius: 30px;
-    font-size: 20px;
+
+/* Titolo */
+h1 {
+  text-align: center;
+  font-size: 28px;
+  line-height: 1.3;
+}
+
+/* Sezione contatti */
+.indication {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 10px;
+}
+
+.indication a {
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.indication a:hover {
+  text-decoration: underline;
+}
+
+/* Social */
+.social {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.instagram, .facebook {
+  background-color: #d7b62e;
+  border: none;
+  border-radius: 30px;
+  padding: 15px 25px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.instagram:hover, .facebook:hover {
+  background-color: #c4a129;
 }
