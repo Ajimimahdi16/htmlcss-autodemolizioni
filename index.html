@@ -1,72 +1,242 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Autodemolizione ricambi torino</title>
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Autodemolizione - Ricambi Torino</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style/style.css">
-    
-</head>
-<body>
-     <header>
-    <!-- Sezione orari e contatti -->
-    <div class="opening-bar">
-      <h3>
-        Dal lunedì al venerdì <time>8:30–12:30</time> - <time>14:00–18:00</time> |
-        Sabato <time>8:30–12:30</time>
-      </h3>
-      <button class="contact-btn">CONTATTI</button>
+  </head>
+
+  
+  <body class="bg-site">
+    <!-- Top bar con orari -->
+    <div class="bg-dark text-white py-2">
+      <div class="container d-flex justify-content-between align-items-center small">
+        <div>Dal lunedì al venerdì <time>8:30–12:30</time> - <time>14:00–18:00</time> | Sabato <time>8:30–12:30</time></div>
+        <div>
+          <button class="btn btn-warning btn-sm me-2" data-bs-toggle="offcanvas" data-bs-target="#contactOffcanvas">Contatti</button>
+          <a href="tel:0113094494" class="btn btn-outline-light btn-sm">📞 011 309 44 94</a>
+        </div>
+      </div>
     </div>
 
-    <!-- Sezione informazioni principali -->
-    <div class="information">
-      <img src="./img/ChatGPT Image 9 nov 2025, 21_15_30.png" alt="Logo dell'azienda" id="logo">
-      <h1>AUTODEMOLIZIONE<br>RICAMBI TORINO S.R.L.</h1>
+    <!-- Header / Hero -->
+    <header class="container py-4">
+      <div class="row align-items-center g-3">
+        <div class="col-md-3 text-center">
+          <img src="./img/ChatGPT Image 9 nov 2025, 21_15_30.png" alt="Logo" id="logo" class="img-fluid rounded-circle shadow-sm mx-auto d-block">
+        </div>
+        <div class="col-md-6 text-center text-md-start">
+          <h1 class="display-6 mb-1">AUTODEMOLIZIONE<br><strong>RICAMBI TORINO S.R.L.</strong></h1>
+          <p class="lead mb-0">Ricambi originali, demolizione sicura e ritiro veicoli. Servizio rapido in tutta Torino.</p>
+        </div>
+        <div class="col-md-3 text-center text-md-end">
+          <a href="https://www.google.com/maps/dir//C.so+Orbassano,+368%2F23,+10137+Torino+TO" class="btn btn-outline-dark mb-2">📍 Indicazioni</a>
+          <a href="mailto:ammdemtorino@gmail.com" class="btn btn-dark mb-2">✉️ Invia Email</a>
+          <div>
+            <a class="btn btn-instagram btn-sm me-1" href="#">Instagram</a>
+            <a class="btn btn-facebook btn-sm" href="#">Facebook</a>
+          </div>
+        </div>
+      </div>
+    </header>
 
-      <section class="indication">
-        <a href="https://www.google.com/maps/dir//C.so+Orbassano,+368%2F23,+10137+Torino+TO">📍 Corso Orbassano 368/23 10137 Torino</a>
-        <a href="mailto:ammdemtorino@gmail.com">ammdemtorino@gmail.com</a>
-        <a href="tel:0113094494">📞 011 309 44 94</a>
+    <!-- Catalogo: pulsanti filtro -->
+    <main class="container">
+      <section class="my-4">
+        <div class="d-flex justify-content-center">
+          <div class="btn-group" role="group" aria-label="Catalog filters">
+            <button class="btn btn-outline-dark active" data-filter="all">Tutti</button>
+            <button class="btn btn-outline-dark" data-filter="ricambi">Vendita ricambi</button>
+            <button class="btn btn-outline-dark" data-filter="demolizione">Demolizione</button>
+            <button class="btn btn-outline-dark" data-filter="recupero">Recupero / Ritiri</button>
+            <button class="btn btn-outline-dark" data-filter="veicoli">Vendita veicoli</button>
+          </div>
+        </div>
       </section>
 
-      <section class="social">
-        <button class="instagram">Instagram</button>
-        <button class="facebook">Facebook</button>
+      <!-- Cards catalogo -->
+      <section class="row g-4" id="catalog">
+        <!-- Card: Magazzino (immagine: img/magazzino.jpg) -->
+        <div class="col-12 col-md-6 col-lg-3" data-category="ricambi">
+          <div class="card h-100 shadow-sm catalog-card">
+            <img src="https://www.scaffalando.com/wp-content/uploads/2017/11/scaffalatura-per-ricambi-auto.jpg" alt="Magazzino" class="card-img-top" onerror="this.style.display='none'">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Vendita di ricambi</h5>
+              <p class="card-text">Ampio magazzino con componenti usati e reimmessi a norma.</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#detailModal" data-title="Vendita ricambi" data-img="img/magazzino.jpg">Dettagli</button>
+                <span class="badge bg-dark">Disponibilità</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card: Scaffali (immagine: img/scaffali.jpg) -->
+        <div class="col-12 col-md-6 col-lg-3" data-category="demolizione">
+          <div class="card h-100 shadow-sm catalog-card">
+            <img src="https://www.euroscaffale.com/wp-content/uploads/2018/01/porta_auto_bifronte01.jpg" alt="Scaffali" class="card-img-top" onerror="this.style.display='none'">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Immagine degli scaffali</h5>
+              <p class="card-text">Scaffalature con ricambi pronti per la vendita.</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#detailModal" data-title="Scaffali magazzino" data-img="img/scaffali.jpg">Dettagli</button>
+                <span class="badge bg-dark">Organizzato</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card centrale (nero) : Carro/parziale (immagine: img/carro.jpg) - block scelto con sfondo nero -->
+        <div class="col-12 col-md-6 col-lg-3" data-category="recupero">
+          <div class="card h-100 shadow-sm catalog-card bg-black-card text-white">
+            <img src="https://media.licdn.com/dms/image/v2/D4D12AQHHqCxnenFrgg/article-cover_image-shrink_720_1280/B4DZeNvVctHkAI-/0/1750429689816?e=2147483647&v=beta&t=z07bPVZzUaC3HixbUc_W9LzWM3R368Ya7m4cHgQylxA" alt="Carro parziale" class="card-img-top" onerror="this.style.display='none'">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title text-black">Recupero e ritiri</h5>
+              <p class="card-text text-black">Immagine parziale del carro per il ritiro o targhe prova.</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#detailModal" data-title="Recupero e ritiri" data-img="img/carro.jpg">Dettagli</button>
+                <span class="badge bg-light text-dark">Ritiri</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card: Auto nuova (immagine: img/auto_nuova.jpg) -->
+        <div class="col-12 col-md-6 col-lg-3" data-category="veicoli">
+          <div class="card h-100 shadow-sm catalog-card">
+            <img src="https://www.fordblubayspa.it/media/m2xhu3bv/siti-di-vendita-auto-usate-in-italia-2022.png" alt="Auto nuova" class="card-img-top" onerror="this.style.display='none'">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Vendita veicoli</h5>
+              <p class="card-text">Auto ricondizionate con garanzia e controllo tecnico.</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#detailModal" data-title="Vendita veicoli" data-img="img/auto_nuova.jpg">Dettagli</button>
+                <span class="badge bg-dark">Garanzia</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
+
+      <!-- Carousel immagini (opzionale) -->
+      <section class="my-5">
+        <div id="showcaseCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner rounded shadow-sm">
+            <div class="carousel-item active">
+              <div class="d-block w-100 carousel-placeholder ">ampio magazzino</div>
+            </div>
+            <div class="carousel-item">
+              <div class="d-block w-100 carousel-placeholder">Area demolizione</div>
+            </div>
+            <div class="carousel-item">
+              <div class="d-block w-100 carousel-placeholder">Veicoli in vendita</div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#showcaseCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#showcaseCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white mt-5 py-4">
+      <div class="container text-center small">© Autodemolizione Ricambi Torino — Corso Orbassano 368/23 — P.IVA: 000000000</div>
+    </footer>
+
+    <!-- Offcanvas Contatti -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="contactOffcanvas">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title">Contatti</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+      </div>
+      <div class="offcanvas-body">
+        <p><strong>Telefono:</strong> <a href="tel:0113094494">011 309 44 94</a></p>
+        <p><strong>Email:</strong> <a href="mailto:ammdemtorino@gmail.com">ammdemtorino@gmail.com</a></p>
+        <p><strong>Indirizzo:</strong> Corso Orbassano 368/23, 10137 Torino</p>
+        <hr>
+        <form id="contactForm">
+          <div class="mb-3">
+            <label for="nameInput" class="form-label">Nome</label>
+            <input type="text" class="form-control" id="nameInput" required>
+          </div>
+          <div class="mb-3">
+            <label for="msgInput" class="form-label">Messaggio</label>
+            <textarea class="form-control" id="msgInput" rows="3" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Invia</button>
+        </form>
+      </div>
     </div>
-    <!--cataloghi-->
-  </header>
-  <main>
-    <section class="catalog">
-        <button class="sale">Vendita di ricambi</button>
-        <button class="demolition">Demolizione veicoli</button>
-        <button class="recovery">Recupero e Ritiro</button>
-        <button class="vehicle ">Vendita veicoli</button>
-    </section>
-    
-<div class="container-catalog">
-  <div class="box">
-    <h1>Immagine<br>del magazzino</h1>
-    <div class="isabel">Vendita di ricambi</div>
-  </div>
 
-  <div class="box">
-    <h1>Immagine<br>degli scaffali</h1>
-    <div class="isabel">Demolizione veicoli</div>
-  </div>
+    <!-- Modal dettagli -->
+    <div class="modal fade" id="detailModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Dettagli</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+              <div class="modal-body">
+                <img id="detailImage" class="img-fluid d-none mb-3" alt="">
+                <p id="detailText">Informazioni dettagliate.</p>
+              </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+            <a href="tel:0113094494" class="btn btn-warning">Chiama</a>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  <div class="box">
-    <h1>Immagine<br>parziale carro</h1>
-    <div class="isabel">Recupero e ritiri</div>
-  </div>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Catalog filter
+      document.querySelectorAll('[data-filter]').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const filter = btn.getAttribute('data-filter');
+          document.querySelectorAll('[data-filter]').forEach(b=>b.classList.remove('active'));
+          btn.classList.add('active');
+          document.querySelectorAll('#catalog [data-category]').forEach(card => {
+            card.style.display = (filter === 'all' || card.dataset.category === filter) ? '' : 'none';
+          });
+        });
+      });
 
-  <div class="box">
-    <h1>Immagine<br>delle auto nuove</h1>
-    <div class="isabel">Vendita veicoli</div>
-  </div>
-</div>
-   
-  </main>
-    
-</body>
+      // Dettagli modal dynamic title/text or image
+      const detailModal = document.getElementById('detailModal');
+      detailModal.addEventListener('show.bs.modal', function (event) {
+        const button = event.relatedTarget;
+        const title = button.getAttribute('data-title') || 'Dettagli';
+        const imgSrc = button.getAttribute('data-img');
+        detailModal.querySelector('.modal-title').textContent = title;
+        const detailText = detailModal.querySelector('#detailText');
+        const detailImage = detailModal.querySelector('#detailImage');
+        if (imgSrc) {
+          detailImage.src = imgSrc;
+          detailImage.classList.remove('d-none');
+          detailText.textContent = 'Anteprima fotografica: ' + title + '. Contattaci per dettagli e preventivi.';
+        } else {
+          detailImage.classList.add('d-none');
+          detailText.textContent = 'Maggiori informazioni su: ' + title + '. Contattaci per dettagli e preventivi.';
+        }
+      });
+
+      // Contact form submit (simulazione)
+      document.getElementById('contactForm').addEventListener('submit', function(e){
+        e.preventDefault();
+        const offcanvas = bootstrap.Offcanvas.getInstance(document.getElementById('contactOffcanvas'));
+        offcanvas.hide();
+        alert('Messaggio inviato. Ti risponderemo al più presto.');
+      });
+    </script>
+  </body>
 </html>

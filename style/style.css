@@ -15,209 +15,60 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: black;
-  border-radius: 50px;
-  margin: 15px;
-  padding: 20px 40px;
-}
+  background-color: black;}
+  /* Stili custom per il tema basato su Bootstrap */
+  :root{
+    --brand-yellow:#d7b62e;
+    --brand-dark:#0b0b0b;
+  }
 
-.opening-bar h3 {
-  color: white;
-  font-size: 20px;
-}
-/*bottone del contatti*/
-.contact-btn {
-    background-color: #d7b62e;   
-    border: none;   
-    border-radius: 35px;   
-    padding: 15px 30px;   
-    font-size: 18px;   
-    cursor: pointer; 
-}     
-    
-    .contact-btn:hover {   
-    background-color: #c4a129; 
-}
- /* stile del bottone creato insieme a chat gpt*/
-button {
-  background: #d7b62e;
-  border: none;
-  border-radius: 30px;
-  color: black;
-  padding: 15px 35px;
-  font-size: 18px;
-  box-shadow: 0 4px 0 #b49522;
-  transition: all 0.2s ease;
-}
+  /* body background e font */
+  body{font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;}
+  .bg-site{background: linear-gradient(180deg, #d7b62e 0%, #f7f0c6 100%);}
 
-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 7px 0 #b49522;
-}
-button:active {
-  transform: translateY(2px);
-  box-shadow: 0 2px 0 #b49522;
-}
+  /* Logo */
+  #logo{width:160px;height:160px;object-fit:cover}
 
+  /* Social buttons */
+  .btn-instagram{background:linear-gradient(45deg,#f09433,#e6683c,#cc2366,#405de6);color:#fff}
+  .btn-facebook{background:#1877f2;color:#fff}
+  .btn-instagram:hover,.btn-facebook:hover{opacity:.9}
 
-/* Sezione principale */
-.information {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: black;
-  margin: 22px;
-  padding: 30px;
-  border-radius: 30px;
-  color: white;
-}
+  /* Placeholder immagini per cards/carousel (sostituire con immagini reali) */
+  .placeholder-img{height:160px;background:linear-gradient(90deg,#e9e9eb,#f5f5f7);color:#333;font-weight:600}
+  .carousel-placeholder{height:220px;background:#ddd;display:flex;align-items:center;justify-content:center;font-weight:700;color:#444}
 
-/* Logo */
-#logo {
-  background-color: white;
-  border-radius: 50%;
-  width: 180px;
-  height: 180px;
-}
+  /* Card styles */
+  .catalog-card{border-radius:16px;overflow:hidden;transition:transform .18s ease,box-shadow .18s ease}
+  .catalog-card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(0,0,0,.12)}
 
-/* Titolo */
-h1 {
-  text-align: center;
-  font-size: 28px;
-  line-height: 1.3;
-}
+  /* Badges */
+  .catalog-card .badge{font-weight:600}
 
-/* Sezione contatti */
-.indication {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  gap: 10px;
-}
+  /* Offcanvas form spacing */
+  .offcanvas-body form .form-label{font-weight:600}
 
-.indication a {
-  color: white;
-  font-size: 18px;
-  text-decoration: none;
-}
+  /* Small responsive tweaks */
+  @media (max-width:767px){
+    #logo{width:110px;height:110px}
+    .display-6{font-size:1.3rem}
+  }
 
-.indication a:hover {
-  text-decoration: underline;
-}
+  /* Utility buttons and accents */
+  .btn-warning{background:var(--brand-yellow);border:none;color:#111}
+  .btn-warning:hover{background:#c4a129}
 
-/* Social */
-.social {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
+  /* Preserve some legacy selectors if needed */
+  .isabel{background:var(--brand-yellow);padding:.6rem 1.2rem;border-radius:999px;color:#000;font-weight:700}
 
-.instagram, .facebook {
-  background-color: #d7b62e;
-  border: none;
-  border-radius: 30px;
-  padding: 15px 25px;
-  font-size: 18px;
-  cursor: pointer;
-  
-}
+  /* Card image sizing: cover and consistent heights */
+  .card-img-top{width:100%;height:180px;object-fit:cover;display:block}
 
-.instagram:hover, .facebook:hover {
-  background-color: #c4a129;
-}
-/*catalogo*/
+  /* Black central block styling */
+  .bg-black-card{background:#f8f7f7}
+  .bg-black-card .card-body{background:transparent}
+  .bg-black-card .card-img-top{height:320px}
 
-.catalog{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 60px;
-    margin-right: 85px;
-    
-}
-.sale{
-  background-color: black;
-    color: white;
-    border: none;
-    border-radius: 68px;
-    padding: 30px 37px;
-    font-size: 25px;
-    cursor: pointer;
-   
-
-}
-.demolition{
-    background-color: black;
-    color: white;
-    border: none;
-    border-radius: 68px;
-    padding: 30px 37px;
-    font-size: 25px;
-    cursor: pointer;
-   
-
-}
-
-.recovery{
-    background-color: black;
-    color: white;
-    border: none;
-    border-radius: 68px;
-    padding: 30px 37px;
-    font-size: 25px;
-    cursor: pointer;
-   
-
-}
-.vehicle{
-    
-    background-color: black;
-    color: white;
-    border: none;
-    border-radius: 68px;
-    padding: 30px 37px;
-    font-size: 25px;
-    cursor: pointer;
-}
-   
-/*container catalogo*/
-
-.container-catalog {
-  display: flex;
-  justify-content: space-between; /* distribuisce lo spazio uniformemente */
-  gap: 40px; /* distanza uguale tra i box */
-  padding: 40px;
-  margin-right: 8px;
-  
-
-.box{
-background-color: black;
-  width: 300px;
-  height: 500px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-
-
-.box h1 {
-  text-align: center;
-  font-size: 24px;
-  color: #f1efef;
-  margin-bottom: 40px;
-}
-
-.isabel {
-  position: absolute;
- bottom: 70px;
-    background-color: #f9c933;
-    padding: 25px 50px;
-    border-radius: 50px 50px;
-    font-weight: bold;
-    color: #000;
-    font-size: 20px;
-    margin-left: -100px;
-}
+  @media (max-width:767px){
+    .bg-black-card .card-img-top{height:200px}
+  }
