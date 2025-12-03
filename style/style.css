@@ -30,8 +30,8 @@ body {
   #logo{width:160px;height:160px;object-fit:cover}
 
   /* Social buttons */
-  .btn-instagram{background:linear-gradient(45deg,#f09433,#e6683c,#cc2366,#405de6);color:#fff}
-  .btn-facebook{background:#1877f2;color:#fff}
+  .btn-instagram { background-color: #000;color:#fff}
+  .btn-facebook{ background-color: #000;color:#fff}
   .btn-instagram:hover,.btn-facebook:hover{opacity:.9}
 
   /* Placeholder immagini per cards/carousel (sostituire con immagini reali) */
